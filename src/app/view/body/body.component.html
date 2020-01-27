@@ -1,0 +1,122 @@
+<div class="wrapper wrapper-content animated fadeIn">
+  <div class="row  border-bottom white-bg dashboard-header">
+    <div class="row">
+      <div class="col-6">
+          <h2>Declaration Taxe Sur Les Vareur Ajouter </h2>
+          <small>You have 42 messages and 6 notifications.</small>
+      </div>
+      <div class="col-6">
+          <h2>Voire Déclaration Envoyée</h2>
+      </div>
+    </div>
+  <div class="col-md-6">
+
+    <ul class="list-group clear-list m-t">
+        <li class="list-group-item fist-item">
+            <span class="float-right">
+                6528058
+            </span>
+            <span class="label label-success">1</span> NINEA
+        </li>
+        <li class="list-group-item">
+            <span class="float-right">
+               Sigtas Tests
+            </span>
+            <span class="label label-info">2</span> Nom Du Contrebuable
+        </li>
+        <li class="list-group-item">
+            <span class="float-right">
+                TVA
+            </span>
+            <span class="label label-primary">3</span> Nature D'impot
+        </li>
+        <li class="list-group-item">
+            <span class="float-right">
+                oct.2017
+            </span>
+            <span class="label label-default">4</span> Période D'imposition
+        </li>
+    </ul>
+</div>
+<div class="col-md-6">
+  <ul class="list-group clear-list m-t">
+      <li class="list-group-item fist-item">
+          <span class="float-right">
+             369787
+          </span>
+          <span class="label label-success">5</span> Numero De Compte
+      </li>
+      <li class="list-group-item">
+          <span class="float-right">
+             Direction Des Grandes Entrprise
+          </span>
+          <span class="label label-info">6</span> Cantre Fiscal
+      </li>
+      <li class="list-group-item">
+          <span class="float-right">
+              26/10/2017
+          </span>
+          <span class="label label-primary">7</span> Date Du Document
+      </li>
+      <li class="list-group-item">
+          <span class="float-right">
+              26/10/2017
+          </span>
+          <span class="label label-default">8</span> Numéro Document
+      </li>
+      <li class="list-group-item">
+          <span class="float-right">
+              26/10/2017
+          </span>
+          <span class="label label-primary">9</span> Numero de Soumission
+      </li>
+      <li class="list-group-item">
+          <span class="float-right">
+              26/10/2017
+          </span>
+          <span class="label label-primary">10</span> Date De soumission
+      </li>
+  </ul>
+</div>
+</div>
+  <div class="p-w-md m-t-sm">
+
+
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="ibox">
+                  <div class="ibox-content">
+
+               <div class="row"> <div class="col-1"></div><h3>DECLARATION TAX SUR LA VALEUR AJOUTEE</h3></div>
+                      <div class="table-responsive">
+                          <table class="table table-striped">
+                              <thead>
+                                <th>Numero</th>
+                                <th>Description</th>
+                                <th>Sommes</th>
+                              </thead>
+                              <tbody *ngFor="let t of tax">
+                              <tr>
+                                  <td>{{t.id}}</td>
+                                  <td>{{t.libeller}}</td>
+                                  <td>{{t.sommes}}F cfa</td>
+                                  <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                              </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                      <div class="row">
+                        <div class="col-10"></div>
+                        <div class="btn-group col-2">
+                          <button class="btn btn-primary" type="submit" routerLink="/taxes">Payer Les Taxes</button>
+                      </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+
+</div>

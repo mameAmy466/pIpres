@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <h5>Sélectionner les éléments que vous souhaitez payer</h5>
+            </div>
+            <div class="ibox-content">
+                <table class="footable table table-stripped toggle-arrow-tiny">
+                    <thead>
+                    <tr>
+                        <th data-toggle="true">Nature d'impot</th>
+                        <th>Période D'imopotion</th>
+                        <th>Montant Du Paiement</th>
+                        <th data-hide="all">Numéro Du Document</th>
+                        <th data-hide="all">Date D'elibigité</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let tax of taxes">
+                            <td>{{tax.natureOfTax}}</td>
+                            <td>{{tax.periodOfTaxation}}</td>
+                            <td>{{tax.paymentAmount}}</td>
+                            <td>{{tax.documentNumber}}</td>
+                            <td>{{tax.eligibilityDate}}</td>
+                            <td>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" (change)="choose(tax)" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                  Sélectionner
+                                </label>
+                              </div></td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <ul class="pagination float-right"></ul>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+                <div class="row mr-2 mb-2">
+                    <div class="col-12 text-right">
+                      <button class="btn btn-primary btn-lg" routerLink="/payment" (click)="save()">
+                        Suivant
+                      </button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

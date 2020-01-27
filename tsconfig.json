@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "m-payment": [
+        "dist/m-payment"
+      ],
+      "m-payment/*": [
+        "dist/m-payment/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

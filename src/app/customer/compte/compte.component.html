@@ -1,0 +1,57 @@
+<div class="ibox-content">
+  <div class="row">
+    <div class="col-3"></div>
+      <div class="col-sm-5 "><h3>Créer Votre Compte</h3>
+          <p>Payez vos impot et taxes de facon secrisée avec le moyen de paaiement de votre choix ! </p>
+          <form role="form">
+              <div class="form-group"> <input type="text" placeholder="Prenom" class="form-control"></div>
+              <div class="form-group"><input type="text" placeholder="Nom" class="form-control"></div>
+              <div class="form-group"><input type="email" placeholder="Enter email" class="form-control"></div>
+              <div class="form-group"> <input type="password" placeholder="choisissez une mot de passe" class="form-control"></div>
+              <div class="form-group"> <input type="password" placeholder="Confirmez le mot de passe" class="form-control"></div>
+              <div>
+                  <button class="btn btn-sm btn-primary float-right m-t-n-xs" type="submit" (click)="isvalide()"><strong>Valider</strong></button>
+                  <p class="btn btn-sm float-right m-t-n-xs"></p>
+                  <button class="btn btn-sm btn-danger float-right m-t-n-xs" type="submit"><strong>Annuler</strong></button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+<div class="col-lg-4" *ngIf="valide">
+    <div class="ibox ">
+        <div class="ibox-title">
+            <h5>Ajouter un compte <small>donner les information de votre compte</small></h5>
+
+        </div>
+        <div class="ibox-content">
+            <div class="text-center">
+            <a data-toggle="modal" class="btn btn-primary" href="#modal-form">clic ici</a>
+            </div>
+            <div id="modal-form" class="modal fade" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12 text-center"><h3 class="m-t-none m-b">ajouter un compte</h3>
+
+                                    <p>Rempli les Champs</p>
+
+                                    <form role="form">
+                                        <div class="form-group"><input type="taxt" placeholder="Nom de La banque" class="form-control"></div>
+                                        <div class="form-group"><input type="taxt" placeholder="IBAN" class="form-control"></div>
+                                        <div class="form-group"><input type="taxt" placeholder="SWIFT/BIC" class="form-control"></div>
+                                        <div>
+                                            <button class="btn btn-sm btn-primary m-t-n-xs" type="submit"><strong>Ajouter</strong></button>
+                                        </div>
+                                    </form>
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</div>
+

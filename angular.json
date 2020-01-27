@@ -124,6 +124,41 @@
           }
         }
       }
+    },
+    "mPayment": {
+      "projectType": "library",
+      "root": "projects/m-payment",
+      "sourceRoot": "projects/m-payment/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/m-payment/tsconfig.lib.json",
+            "project": "projects/m-payment/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/m-payment/src/test.ts",
+            "tsConfig": "projects/m-payment/tsconfig.spec.json",
+            "karmaConfig": "projects/m-payment/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/m-payment/tsconfig.lib.json",
+              "projects/m-payment/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "FayTax"
 }
