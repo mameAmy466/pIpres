@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { JwtModule } from "@auth0/angular-jwt";
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +20,16 @@ import { PaymentValidatorComponent } from './customer/payment-validator/payment-
 import { PaymentMethodeComponent } from './customer/payment-methode/payment-methode.component';
 import { CompteComponent } from './customer/compte/compte.component';
 import { AddCompteComponent } from './customer/add-compte/add-compte.component';
-import { HttpClient} from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ValideComponent } from './valide/valide.component';
+import { ProfilComponent } from './profil/profil.component';
+import { ValiditeExterneComponent } from './validite-externe/validite-externe.component';
+import { ValideExComponent } from './valide-ex/valide-ex.component';
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr);
 
 
 
@@ -31,15 +45,28 @@ import { HttpClient} from '@angular/common/http';
     PaymentValidatorComponent,
     PaymentMethodeComponent,
     CompteComponent,
-    AddCompteComponent
+    AddCompteComponent,
+    LoginComponent,
+    RegisterComponent,
+    ValideComponent,
+    ProfilComponent,
+    ValiditeExterneComponent,
+    ValideExComponent,
   ],
   imports: [
+    SweetAlert2Module.forRoot(),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    JwtModule,
+    SweetAlert2Module,
+    SweetAlert2Module.forChild({ /* options */ })
+
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'fr-FR'},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

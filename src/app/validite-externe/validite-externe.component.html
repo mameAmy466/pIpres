@@ -1,0 +1,172 @@
+<br>
+<div class="container" *ngIf="methode == 'Paypal'">
+  <div class="row">
+    <div class="col-3"></div>
+      <div class="col-lg-6">
+          <div class="ibox ">
+            <div class="row">
+              <div class="col-6"><h4>
+                  <img src="https://cdn.1min30.com/wp-content/uploads/2017/10/Logo-PayPal-1.jpg" alt="" class="img-xl">
+                </h4></div>
+            </div>
+
+               <div class="ibox-content">
+                <h4>
+                  Payer avec paypal
+               </h4>
+
+                 <p></p>
+                  <form #f="ngForm" (ngSubmit)="OneClique(f.value)" >
+                    <div class="row">
+                      <div class="col-3"></div>
+                        <input type="text" ngModel name="Email ou numéro de telephone" class="col-6" placeholder="Email ou numéro de telephone">
+                        <div class="col-3"></div>
+                      </div>
+                      <p></p>
+                     <div class="row">
+                        <div class="col-3"></div>
+                        <input type="password" ngModel name="" class="col-6" placeholder="Mot de passe">
+                        <div class="col-3"></div>
+                      </div>
+                     <p></p>
+                     <div class="row">
+                        <div class="col-3"></div>
+                        <button type="submit" class="btn btn-success col-6" routerLink="/paypal.pay.html">Connexion</button>
+                        <div class="col-3"></div>
+                      </div>
+                  </form>
+               </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+<br>
+<br>
+<div class="container" *ngIf="methode == 'Carte Bancaire'">
+  <div class="row text-center">
+    <div class="col-2"></div>
+      <div class="col-lg-8">
+          <div class="ibox ">
+            <div class="ibox-title text-left coleur">
+                    <h2>
+                      Détails de paiement
+                    </h2>
+            </div>
+               <div class="ibox-content">
+                <h4>
+                  Méthode de paiement
+               </h4>
+                 <p></p>
+                  <form #f="ngForm" (ngSubmit)="OneClique(f.value)" >
+                    <div class="row">
+                        <label for="" class="col-5 text-right">Nom du porteur de la carte</label>
+                        <input type="text" ngModel name="Nom" class="col-4" >
+                    </div>
+                      <p></p>
+                     <div class="row">
+                        <label for="" class="col-5 text-right"> Numéro du carte de paiment</label>
+                        <input type="text" ngModel name="Numéro" class="col-4" placeholder="**** **** **** ****">
+                     </div>
+                     <p></p>
+                     <div class="row">
+                        <label for="" class="col-5 text-right">cryptogramme</label>
+                        <input type="text" ngModel name="Numéro" class="col-4" placeholder="****">
+                     </div>
+                     <p></p>
+                     <div class="row">
+                        <label for="" class="col-5 text-right">Date d'expiration</label>
+                        <input type="date" ngModel name="date" class="col-5">
+
+                     </div>
+                     <p></p>
+                     <div class="row">
+                       <div class="col-3"></div>
+                       <div class="col-9">
+                          <input type="checkbox"id="inlineCheckbox2">
+                          <label for="" class="text-right"> j'ai lu et j'accepte les conditions</label>
+                       </div>
+                   </div>
+                     <div class="row">
+                       <div class="col-4"></div>
+                        <button type="submit" class="btn btn-danger col-2">annuler</button>
+                        <div class="col-1"></div>
+                        <button type="submit" class="btn btn-info col-3" routerLink="/carte-valide.html">valider le paiement</button>
+                      </div>
+                  </form>
+               </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+<br>
+<br>
+<div class="container " *ngIf="methode == 'Orange Money'">
+    <h1 class="titre">Paiement</h1>
+      <img src="../../assets/images/logo dgid.png" border="0" alt="FayTax" align="center" class="logright" height="75">
+      <table class="table">
+        <tbody><tr>
+          <td>Site marchand</td>
+          <td class="alignright">FayTax</td>
+        </tr>
+        <tr>
+          <td>Référence commande</td>
+          <td class="alignright">SAR83739363732</td>
+        </tr>
+        <tr>
+          <td>Commande</td>
+          <td class="alignright">Paiement d'impôt</td>
+        </tr>
+        <tr class="success">
+          <td>Total de votre commande</td>
+          <td class="alignright"><b>{{amount | number :'0.0':'fr'}} F.CFA</b></td>
+        </tr>
+      </tbody></table>
+
+      <div>
+      <h2 class="lefth">Paiement sécurisé avec Orange Money</h2><img src="data:image/png;base64,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">
+      </div>
+
+
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="numero" class="col-sm-5 control-label">Numéro de téléphone</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" id="numero" name="numero" placeholder="Téléphone" autocomplete="off" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Votre numéro de mobile&#39;;}" tabindex="1" maxlength="9" value="">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputCode" class="col-sm-5 control-label">Code d'autorisation temporaire</label>
+          <div class="col-sm-7">
+            <input type="password" class="form-control" id="code" name="code" placeholder="Code" onfocus="this.value = &#39;&#39;;" onblur="if (this.value == &#39;&#39;) {this.value = &#39;&#39;;}" tabindex="2" maxlength="6" autocomplete="off" value="">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label>
+                Pour obtenir un code d'autorisation faites le numéro #144#391#
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-5 col-sm-7">
+            <input type="submit" class="btn btn-info" id="btn_valider" routerLink="/Orage-Money-valide.html">
+          </div>
+        </div>
+      </form>&nbsp;
+      <form>
+        <input type="hidden" name="ref_commande" value="SAR83739363732">
+        <input type="hidden" name="montant" value="5">
+        <div class="form-group">
+                      <div class="col-sm-offset-5 col-sm-7">
+                        <input class="btn btn-warning" value="Annuler" tabindex="4" type="button">
+                      </div>
+                    </div>
+      </form>
+  </div>

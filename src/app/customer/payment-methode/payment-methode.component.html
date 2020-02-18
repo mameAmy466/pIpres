@@ -1,36 +1,47 @@
+<app-sousnavbar></app-sousnavbar>
+<br><br>
 <div class="row">
   <div class="col-lg-12">
       <div class="ibox ">
-          <div class="ibox-title">
-              <h5>Paiement</h5>
+          <div class="ibox-title  coleur-btn text-white">
+              <h5>Paiements</h5>
           </div>
           <div class="ibox-content">
                 <table class="footable table table-stripped toggle-arrow-tiny">
-                  <tr *ngFor="let mp of tabData" >
-                    <td>je souhaite payer</td>
-                    <td>{{mp.montant}} F Cfa</td>
-                    <td>par {{mp.name}}</td>
-                    <td><img src="" alt="image"></td>
-                    <td><button type="submit" routerLink="/paVlide">Procéder au Paiement</button></td>
-                  </tr>
+                  <tbody *ngFor="let mp of tabData" >
+                      <tr *ngIf="mp.paiementMethodeId && mp.amount">
+                          <td>je souhaite payer</td>
+                          <td> {{mp.amount | number :'0.0':'fr'}} F Cfa</td>
+                          <td> par </td>
+                          <td *ngIf="mp.paiementMethodeId =='Orange Money'"> <img src="https://monisnapcontent.kinsta.cloud/wp-content/uploads/2019/06/orange-money.jpg" class=" img-md" alt="image"></td>
+                          <td *ngIf="mp.paiementMethodeId =='Carte Bancaire'"> <img src="../../../assets/images/test carte bancaire.png" alt="image"></td>
+                          <td *ngIf="mp.paiementMethodeId =='Paypal'">  <img  src="https://cdn.1min30.com/wp-content/uploads/2017/10/Logo-PayPal-1.jpg " class=" img-md" alt="image"></td>
+                          <td *ngIf="mp.paiementMethodeId =='Virement'">  <img src="../../../assets/images/tEST VIREMENT" class=" img-md" alt="image"></td>
+                          <td *ngIf="!mp.valide && mp.paiementMethodeId =='Paypal'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/paypal.html">Procéder au Paiement</button></td>
+                          <td *ngIf="!mp.valide && mp.paiementMethodeId =='Virement'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)" routerLink="/payment.valide">Procéder au Paiement</button></td>
+                          <td *ngIf="!mp.valide && mp.paiementMethodeId =='Carte Bancaire'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/Paiement-carte.html">Procéder au Paiement</button></td>
+                          <td *ngIf="!mp.valide && mp.paiementMethodeId =='Orange Money'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/orage-money.html">Procéder au Paiement</button></td>
+                          <td *ngIf="mp.valide"><button class="btn coleur-success btn-circle btn-lg" type="button"><i class="fa fa-check"></i></button></td>
+                           <td class="coleur-success1"  *ngIf="mp.valide">Payé</td>
+                        </tr>
+                  </tbody>
                 </table>
-
            </div>
-           <div class="ibox-content">
+           <div class="ibox-content font-weight-bold">
              <div class="row">
                <div class="col-6"></div>
-               <div class="col-3 text-right">Total a payer</div>
-               <div class="col-3">  80000000 F cFA</div>
+               <div class="col-3 text-right">Total à payer</div>
+               <div class="col-3"> {{total| number :'0.0':'fr'}} F cFA</div>
              </div>
              <div class="row">
                 <div class="col-6"></div>
-                <div class="col-3 text-right">Payer</div>
-                <div class="col-3">  0 F cFA</div>
+                <div class="col-3 text-right">Payé</div>
+                <div class="col-3"> {{amount | number :'0.0':'fr'}} F cFA</div>
               </div>
               <div class="row">
                   <div class="col-6"></div>
-                  <div class="col-3 text-right">Reste a payer</div>
-                  <div class="col-3"> 80000000 F cFA</div>
+                  <div class="col-3 text-right">Reste à payer</div>
+                  <div class="col-3"> {{total2| number :'0.0':'fr'}} F cFA</div>
                 </div>
            </div>
       </div>

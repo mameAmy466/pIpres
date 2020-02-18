@@ -1,0 +1,61 @@
+<div class="ibox-content" *ngIf="methode == 'Orange Money'">
+  <div class="wrapper wrapper-content">
+      <div class="middle-box text-center animated fadeInRightBig">
+          <h2 class="font-bold">Merci de votre fidélité !</h2>
+          <div>
+            <img src="https://monisnapcontent.kinsta.cloud/wp-content/uploads/2019/06/orange-money.jpg" alt="" class=" rounded-circle img-lg">
+          </div>
+          <div class="error-desc">
+            <div class="col"> votre paiement avec Orange Money a bien été effectué
+              </div>
+
+              <a routerLink="/payment.methode" class="btn coleur m-t" (click)="valider()">Cliquez pour retourner sur FayTax</a>
+          </div>
+      </div>
+  </div>
+</div>
+<br>
+<div class="container" *ngIf="methode == 'Paypal'">
+    <h1 class="font-bold">DGID</h1>
+
+    <div class="ibox-content col-6">
+        <div>
+            <img src="https://www.fascol.com/wp-content/uploads/2016/05/paypal-logo.png" alt="" class="img">
+            <div class="col-7 text-right">{{amount | number :'0.0':'fr'}} fcfa</div>
+          </div>
+          <div class="row">
+            <div class="col-7">
+                <hr>
+            </div>
+
+          </div>
+          <div class="row">
+              <div class="col-6">Payer avec</div>
+          <div class="col-4"> <a href=""></a></div>
+          </div>
+          <div class="row">
+              <div class="i-checks"><label> <input type="radio"  class="m-xl"> <img src="../../assets/images/test carte bancaire.png" alt="" class="img-lg"> Visa x-6262</label></div>
+            </div>
+            <div class="row">
+                <div class="form-row"><label> <input type="radio"  class="form-group m-xl" ><img src="https://cdn.1min30.com/wp-content/uploads/2017/04/Symbole-Visa.png" alt="" class="img-sm">Master carte x-2872</label></div>
+              </div>
+              <div class="row">
+                <div class="col-1"></div>
+                <button type="submit" class="btn btn-success col-10"  routerLink="/payment.methode">Payer</button>
+              </div>
+      </div>
+</div>
+
+<div class="ibox-content" *ngIf="methode == 'Carte Bancaire'">
+  <div class="wrapper wrapper-content">
+      <div class="middle-box text-center animated fadeInRightBig">
+          <h2 class="font-bold">Merci de votre fidélité !</h2>
+          <div class="error-desc">
+            <div class="col"><i class="fa fa-check btn coleur-success btn-circle btn-lg"></i></div>
+            paiement en ligne effectué avec succés
+              <br/><a routerLink="/payment.methode" class="btn coleur m-t">Poursuivre mes paiements</a>
+          </div>
+      </div>
+  </div>
+</div>
+

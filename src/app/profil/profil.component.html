@@ -1,0 +1,65 @@
+<app-sousnavbar></app-sousnavbar>
+<br>
+  <div class="p-w-md m-t-sm">
+                   <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ibox">
+                                <div class="ibox-content">
+                                    <div class="row text-center">
+                                        <div class="col-3">
+                                            <div class="payment-card">
+                                                <img src="https://monisnapcontent.kinsta.cloud/wp-content/uploads/2019/06/orange-money.jpg" class="rounded-circle img-lg img-border" alt="Cinque Terre" (click)="affich()">
+                                               </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="payment-card">
+                                                <img src="https://cdn.1min30.com/wp-content/uploads/2017/10/Logo-PayPal-1.jpg " class="rounded-circle img-lg img-border"  alt="Cinque Terre" (click)="affich()">
+                                              </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="payment-card">
+                                                <img src="https://vip-ibc.com/media/30361/banktransfer-fr.png" class="rounded-circle img-border img-lg"  alt="Cinque Terre" (click)="affich()">
+
+                                              </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="payment-card">
+                                                <img src="https://img2.freepng.fr/20180814/oqo/kisspng-mastercard-visa-bank-card-portable-network-graphic--5b72ceb25742b5.6910264415342506743574.jpg" class="rounded-circle img-lg img-border" alt="Cinque Terre" (click)="affich()">
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive" *ngIf="click">
+                                        <table class="table table-striped">
+
+                                            <tbody>
+                                              <tr>
+                                                <th>Id:</th>
+                                                <th>Nature d'impôt:</th>
+                                                <th>Période d'imposition:</th>
+                                                <th>Montant du paiement:</th>
+                                                <th>Numéro du document: </th>
+                                                <th>Date d'elibigité:
+                                                </th>
+                                                <th></th>
+                                              </tr>
+                                            <tr *ngFor="let t of tax">
+                                                <td>{{t.id}}</td>
+                                                <td>{{t.natureOfTax}}</td>
+                                                <td>{{t.periodOfTaxation}}</td>
+                                                <td>{{t.paymentAmount}}</td>
+                                                <td>{{t.documentNumber}}</td>
+
+
+                                                <td>{{t.eligibilityDate}}</td>
+                                                <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+     </div>

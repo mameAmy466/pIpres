@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-payment-validator',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment-validator.component.scss']
 })
 export class PaymentValidatorComponent implements OnInit {
-
-  constructor() { }
+  public methode = '';
+  public amount: any = 0;
+  public banques = [];
+  constructor( private api: ApiService) { }
 
   ngOnInit() {
+    this.methode = JSON.parse(localStorage.getItem('methode'));
+    this.amount = Number(localStorage.getItem('amount'));
+    this.banques = this.api.getBanques();
+  }
+  OneClique(data) {
+    console.log(data);
   }
 
 }

@@ -1,4 +1,7 @@
-export class MPayment {
-  montant: any;
-  name: any
+export class PaiementPartielDto
+{
+  id: any;
+  amount: any;
+  paiementMethodeId: any;
+  valide = false;
 }

@@ -1,56 +1,82 @@
-<div class="row">
-    <div class="col-lg-12">
+<app-sousnavbar></app-sousnavbar>
+<br><br>
+<div class="contaire">
+  <div class="row">
+<div class="col-2"></div>
+    <div class="col-lg-8" *ngIf="methode == 'Virement'">
         <div class="ibox ">
             <div class="ibox-title">
-                <h5>Paiement</h5>
-            </div>
-            <div class="ibox-content">
-                  <table class="footable table table-stripped toggle-arrow-tiny">
-                      <tr>
-                          <td>Side marchand</td>
-                          <td class="text-right">FAYTAX</td>
-                        </tr>
-                      <tr>
-                          <td>Referace commande</td>
-                          <td class="text-right">002218222f</td>
-                        </tr>
-                      <tr>
-                          <td>Commande</td>
-                          <td class="text-right">Paiement D'impot</td>
-                        </tr>
-                    <tr>
-                      <td>Total de votre commende</td>
-                      <td class="text-right bg-ligth">50 000F Cfa</td>
-                    </tr>
-                  </table>
-
-             </div>
-             <div class="ibox-content">
-               <div class="row">
-                 <h4>
-                   Paiement Securice avec Orange Money <img src="" alt="image">
-                 </h4>
-               </div>
-               <p></p>
-                <form action="">
-                  <div class="row">
-                      <label for="" class="col-5 text-right"> Numero de Telephone </label>
-                      <input type="text" class="col-6" placeholder="Numero de Telephone" >
+                <h5 class="col-4">Ajouter un compte</h5>
+                <div class="col-8">
+                  <a data-toggle="modal" class="btn coleur" href="#modal-form">cliquer ici</a>
                   </div>
-                    <p></p>
-                   <div class="row">
-                      <label for="" class="col-5 text-right"> Code d'autorisation</label>
-                      <input type="text" class="col-6" placeholder="Code d'autorisation">
-                   </div>
-                   <p></p>
-                   <div class="row">
-                     <div class="col-5"></div>
-                      <button type="submit" class="btn btn-danger col-2">annuler</button>
-                      <div class="col-1"></div>
-                      <button type="submit" class="btn btn-primary col-2">valider</button>
+            </div>
+            <div>
+                <div id="modal-form" class="modal fade" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-sm-12 text-center"><h3 class="m-t-none m-b">Ajouter un compte</h3>
+
+                                        <p>Renseignez les informations de votre compte</p>
+
+                                        <form #f="ngForm" (ngSubmit)="OneClique(f.value)" >
+                                            <div class="form-group"><input type="taxt" placeholder="Nom de La banque" class="form-control"></div>
+                                            <div class="form-group"><input type="taxt" placeholder="IBAN" class="form-control"></div>
+                                            <div class="form-group"><input type="taxt" placeholder="SWIFT/BIC" class="form-control"></div>
+                                            <div>
+                                                <button class="btn btn-sm coleur m-t-n-xs" type="submit"><strong>Ajouter</strong></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                            </div>
+                        </div>
+                        </div>
                     </div>
-                </form>
-             </div>
+            </div>
+        </div>
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-12 text-center"><h3 class="m-t-none m-b">Payer avec un compte déja enregistré</h3>
+
+                    <p>Remplir les Champs</p>
+
+                    <form #f="ngForm" (ngSubmit)="OneClique(f.value)" >
+                        <div class="form-group row">
+                            <div class="form-group col-5 text-right">
+                                <label>
+                                  Sélectionnez votre compte
+                                  </label>
+                              </div>
+                            <div class="form-group col-5">
+                                <select class="custom-select" name="">
+                                    <option selected > ---Banque---</option>
+                                    <option  *ngFor="let bq of banques">{{bq.name}}</option>
+                                  </select>
+                                 </div>
+                             </div>
+                        <div class="form-group row">
+                            <div class="form-group col-5 text-right">
+                                <label>
+                                  Montant du paiement
+                              </label>
+                              </div>
+                              <div class="form-group col-5">
+                          <input type="taxt" value="{{amount}}" readonly class="form-control">
+                          </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm coleur m-t-n-xs" type="submit" routerLink="/Valide">
+                              <strong>Valider</strong>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+        </div>
         </div>
     </div>
+    </div>
+    <div class="col-2"></div>
+  </div>
   </div>

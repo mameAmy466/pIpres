@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Data } from '@angular/router';
+import { Forme } from '../forme';
 
 
 @Injectable({
@@ -63,39 +65,39 @@ export class ApiService {
     {
       id: 1,
       natureOfTax: 'VRS',
-      periodOfTaxation: '2019-12',
+      periodOfTaxation: '08-2019',
       paymentAmount: 50000,
-      documentNumber: '150019160',
-      eligibilityDate: '31/11/2019'
+      documentNumber: '171216000',
+      eligibilityDate: '31/09/2019'
     },
     {
       id: 2,
       natureOfTax: 'IS',
-      periodOfTaxation: '2019-12',
+      periodOfTaxation: '05-2019',
       paymentAmount: 750000,
       documentNumber: '150019160',
-      eligibilityDate: '31/11/2019'
+      eligibilityDate: '31/08/2019'
     },
     {
       id: 3,
       natureOfTax: 'TVA',
-      periodOfTaxation: '2019-12',
+      periodOfTaxation: '03-2019',
       paymentAmount: 500000,
-      documentNumber: '150019160',
-      eligibilityDate: '31/11/2019'
+      documentNumber: '148019160',
+      eligibilityDate: '31/06/2019'
     },
     {
       id: 4,
       natureOfTax: 'BRS',
-      periodOfTaxation: '2019-12',
+      periodOfTaxation: '11-2019',
       paymentAmount: 50000,
-      documentNumber: '150019160',
-      eligibilityDate: '31/11/2019'
+      documentNumber: '146019160',
+      eligibilityDate: '31/12/2019'
     },
     {
       id: 5,
       natureOfTax: 'CGU',
-      periodOfTaxation: '2019-12',
+      periodOfTaxation: '12-2019',
       paymentAmount: 1000000,
       documentNumber: '150019160',
       eligibilityDate: '31/11/2019'
@@ -105,10 +107,6 @@ export class ApiService {
     {
       id: 1,
       name: 'Orange Money'
-    },
-    {
-      id: 2,
-      name: 'Free Money'
     },
     {
       id: 3,
@@ -123,34 +121,41 @@ export class ApiService {
       name: 'Virement'
     }
   ];
-  public ListepartUrl = 'ttp://localhost:9095/api/fayTax/taxes';
 
-
+  private banques = [
+    {
+      id: 1,
+      name: 'BICIS'
+    },
+    {
+      id: 3,
+      name: 'CBAO Groupe Attijariwafa bank'
+    },
+    {
+      id: 4,
+      name: 'Société générale de banques au Sénégal'
+    },
+    {
+      id: 5,
+      name: 'Bank of Africa Senegal(BOA)'
+    }
+  ];
   public scheduledPayment = [];
   public TabData = [];
 
 
-  constructor( private http: HttpClient) { }
-  getFromBack() {
-      return this.http.get('http//localhost:9095/api/fayTax/taxes');
-    }
+  constructor() { }
+
+  getBanques() {
+    return this.banques;
+  }
   getAllTax() {
     return this.allTax;
   }
   getScheduledPayment() {
     return this.scheduledPayment;
   }
-  getTabData() {
-    return this.TabData;
-  }
   getPaymentMethod() {
     return this.paymentMethod;
   }
-  getTax() {
-    /* console.log(this.http.get(this.ListepartUrl + 'taxes/' + 20));
-     return this.http.get(this.ListepartUrl + 'taxes/' + 1);*/
-     return this.tax;
-
-   }
-
 }

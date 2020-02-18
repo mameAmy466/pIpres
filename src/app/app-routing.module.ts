@@ -7,6 +7,12 @@ import { BodyComponent} from '../app/view/body/body.component';
 import { PaymentValidatorComponent } from './customer/payment-validator/payment-validator.component';
 import { CompteComponent } from './customer/compte/compte.component';
 import { AddCompteComponent } from './customer/add-compte/add-compte.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ValideComponent } from './valide/valide.component';
+import { ProfilComponent } from './profil/profil.component';
+import { ValiditeExterneComponent } from './validite-externe/validite-externe.component';
+import { ValideExComponent } from './valide-ex/valide-ex.component';
 
 
 const routes: Routes = [
@@ -20,19 +26,49 @@ const routes: Routes = [
     path: 'taxes', component: TaxesComponent
   },
   {
-    path: 'pM', component: PaymentMethodeComponent
+    path: 'payment.methode', component: PaymentMethodeComponent
   },
   {
     path: 'payment', component: PaymentComponent
   },
   {
-    path: 'paVlide', component: PaymentValidatorComponent
+    path: 'payment.valide', component: PaymentValidatorComponent
+  },
+  {
+    path: 'orage-money.html', component: ValiditeExterneComponent
+  },
+  {
+    path: 'paypal.html', component: ValiditeExterneComponent
+  },
+  {
+    path: 'Paiement-carte.html', component: ValiditeExterneComponent
+  },
+  {
+    path: 'Valide', component: ValideComponent
+  },
+  {
+    path: 'Orage-Money-valide.html', component: ValideExComponent
+  },
+  {
+    path: 'carte-valide.html', component: ValideExComponent
+  },
+  {
+    path: 'paypal.pay.html', component: ValideExComponent
   },
   {
     path: 'compte', component: CompteComponent
   },
   {
     path: 'Account', component: AddCompteComponent
+  },
+  {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'profil', component: ProfilComponent
+  },
+  {
+    path: 'register', component: RegisterComponent
   },
 ];
 

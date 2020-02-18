@@ -1,0 +1,58 @@
+<br>
+<br>
+<div class="container-fluid bg">
+  <div class="bg1">
+      <div class="loginColumns animated fadeInDown">
+          <div class="row">
+              <div class="col-md-6 text-white">
+                  <h2 class="font-bold ">Bienvenue</h2>
+                  <p>
+
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit sit in deleniti sequi. Eius, commodi!</p>
+                  <p>
+
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, temporibus nobis,</p>
+                  <p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum minima neque eligendi exercitationem error veniam odio, maiores,</p>
+                  <p>
+                      <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, veritatis.</small>
+                  </p>
+              </div>
+              <div class="col-md-6">
+                  <div class="ibox-content">
+                      <form #f="ngForm" (ngSubmit)="OneClique(f.value)">
+                          <div class="form-group">
+                              <input type="text" ngModel class="form-control" placeholder="Nom d'utilisateur" required="" name="username">
+                          </div>
+                          <div class="form-group">
+                              <input type="password" ngModel class="form-control" placeholder="Mot de passe" required="" name="password">
+                          </div>
+                          <button type="submit" routerLink="/" class="btn coleur block full-width m-b">Connexion</button>
+
+                          <a href="#">
+                              <small>Mot de passe oublié?</small>
+                          </a>
+
+                          <p class="text-muted text-center">
+                              <small>
+                                  Vous n'avez pas de compte?</small>
+                          </p>
+                          <a class="btn btn-sm coleur-icon btn-block" routerLink="/register">Créer un compte</a>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <hr/>
+          <div class="row">
+              <div class="col-md-6">
+                  Copyright People Input
+              </div>
+              <div class="col-md-6 text-right">
+                 <small>© 2020</small>
+              </div>
+          </div>
+      </div>
+  </div>
+
+</div>
+

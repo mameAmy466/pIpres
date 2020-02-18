@@ -11,7 +11,6 @@ export class BodyComponent implements OnInit {
   constructor(private appServe: ApiService ) {}
 
   ngOnInit() {
-    this.tax = this.appServe.getTax();
   }
 
 }
