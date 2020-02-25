@@ -1,23 +1,27 @@
 import { Injectable } from '@angular/core';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { HttpClient } from '@angular/common/http';
+import { User } from './user';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  public jwt: '';
-  constructor( private http: HttpClient) { }
-  login(data) {
-    return this.http.post('http://192.168.10.114:8080/api/authenticate', data,{observe: 'response'});
+  constructor() { }
+
+  login(user: User) {
+    console.log(user);
+
+    if ((user.username === 'admin' && user.password === 'admin') || (user.username === 'user' && user.password === 'user')) {
+      return true;
+    }
+    return false ;
   }
   enrigToken(jwt: string) {
   localStorage.setItem('token', jwt);
   }
-  /*isAuthentifiquete() {
-    const jwt = localStorage.getItem('token');
-
-   }*/
+isAuthentifiquete() {
+   // tslint:disable-next-line: no-unused-expression
+   this.login;
+   }
 
 }

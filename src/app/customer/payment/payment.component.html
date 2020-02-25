@@ -11,7 +11,7 @@
                             <i class="fa fa-wrench"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
-                            <li><a routerLink="/taxes" class="dropdown-item">Modifier</a>
+                            <li><a class="dropdown-item" (click)="removeTab()">Modifier</a>
                             </li>
                         </ul>
                     </div>
@@ -38,15 +38,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-6 text-center" *ngIf="!click" >
-            <a class="btn coleur-btn text-white btn-rounded btn-lg" (click)="forme()">Payer</a>
-        </div>
-        <div class="col-6" *ngIf="click">
+
+        <div class="col-6">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="ibox ">
                         <div class="ibox-title">
-                            <h5>Paiements </h5>
+                            <h5>Payer</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -54,16 +52,15 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-
                             <form>
                                 <div class="row" *ngFor="let mp of TabData ;let i=index" >
                                     <div class="col-6 text-left">
                                       <input type="number" class="form-control" [(ngModel)]="mp.amount"   (change)="calculTotal(mp.amount)" name="montant{{i}}" placeholder="Montant"> </div>
                                     <div class="col-5 text-right">
                                         <select class="custom-select" [(ngModel)]="mp.paiementMethodeId" name="paiementMethodeId{{i}}">
-                                            <option selected > ---Moyen de paiement---</option>
+                                            <option selected>---Moyen de paiement---</option>
                                             <option  *ngFor="let pm of paymentMethods">{{pm.name}}</option>
-                                          </select>
+                                        </select>
                                     </div>
                                     <div class="col-1"><i class="fa fa-trash-o bg-danger cor" (click)="removePay(i,mp.amount)"></i></div>
                                       </div>

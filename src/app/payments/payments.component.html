@@ -1,0 +1,55 @@
+   <div class="row">
+     <div class="col-9"></div>
+     <div class="col-3"><form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label style="color: #d49f3f;">recherche</mat-label>
+          <input matInput style="color: #d49f3f;">
+        </mat-form-field>
+        <button mat-raised-button class=" btn-cherche text-white"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+   </div>
+
+<div class="mat-elevation-z8 table-responsive row">
+    <table mat-table class="full-width-table table table-striped" matSort aria-label="Elements">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Numéro de document</th>
+        <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      </ng-container>
+      <ng-container matColumnDef="documentNumbre">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Numéro de document</th>
+        <td mat-cell *matCellDef="let row">{{row.documentNumbre}}</td>
+      </ng-container>
+      <!-- Id Column -->
+      <ng-container matColumnDef="libelle">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Libellé</th>
+        <td mat-cell *matCellDef="let row">{{row.libelle}}</td>
+      </ng-container>
+      <!-- Id Column -->
+      <ng-container matColumnDef="montant">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Montant</th>
+        <td mat-cell *matCellDef="let row">{{row.montant| number:'0.0':'fr'}}</td>
+      </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="datePayement">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Date de paiement</th>
+          <td mat-cell *matCellDef="let row">{{row.datePayement}}</td>
+        </ng-container>
+            <!-- Name Column -->
+      <ng-container matColumnDef="paymentMethode">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Moyen de payment</th>
+        <td mat-cell *matCellDef="let row">{{row.paymentMethode}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator #paginator
+        [length]="dataSource?.data.length"
+        [pageIndex]="0"
+        [pageSize]="5"
+        [pageSizeOptions]="[10,25, 50, 100, 250]">
+    </mat-paginator>
+  </div>

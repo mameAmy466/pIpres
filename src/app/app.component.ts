@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../environments/environment';
+
 
 @Component({
   selector: 'app-root',
@@ -7,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  private method = '';
   public affiche = false;
+  production = environment.production;
   constructor( private router: Router ) {}
   ngOnInit(): void {
    this.router.navigateByUrl('/login');

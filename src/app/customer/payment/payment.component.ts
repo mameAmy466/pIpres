@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService} from '../../service/api.service';
 import {PaiementPartielDto} from '../../m-payment';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-payment',
@@ -49,12 +48,15 @@ export class PaymentComponent implements OnInit {
   removePay(index, amount) {
     this.total1 = this.total1 + amount;
     this.TabData.splice(index);
-
   }
-paymentValide() {
-this.route.navigateByUrl('/payment.methode');
-this.apiService.TabData = this.TabData;
-console.log(JSON.stringify(this.TabData));
-localStorage.setItem('TabData', JSON.stringify(this.apiService.TabData));
-}
+  removeTab() {
+    localStorage.removeItem('scheduledPayment');
+    this.route.navigateByUrl('/taxes');
+  }
+  paymentValide() {
+    this.route.navigateByUrl('/payment.methode');
+    this.apiService.TabData = this.TabData;
+    console.log(JSON.stringify(this.TabData));
+    localStorage.setItem('TabData', JSON.stringify(this.apiService.TabData));
+  }
 }

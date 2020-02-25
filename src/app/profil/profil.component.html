@@ -46,10 +46,8 @@
                                                 <td>{{t.id}}</td>
                                                 <td>{{t.natureOfTax}}</td>
                                                 <td>{{t.periodOfTaxation}}</td>
-                                                <td>{{t.paymentAmount}}</td>
+                                                <td>{{t.paymentAmount | number:'0.0':'fr'}} F CFA</td>
                                                 <td>{{t.documentNumber}}</td>
-
-
                                                 <td>{{t.eligibilityDate}}</td>
                                                 <td><a href="#"><i class="fa fa-check text-navy"></i></a></td>
                                             </tr>

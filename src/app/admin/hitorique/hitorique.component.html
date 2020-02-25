@@ -1,0 +1,130 @@
+<br>
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm-4">
+            <h1 class="m-b-xs">
+                26,900
+            </h1>
+            <small>transactions du mois en cours</small>
+            <div class="m-b-sm">
+                <highcharts-chart
+                [Highcharts]="Highcharts1"
+                [options]="chartOptions1"
+                style="width: 100%; height: 200px; display: block;"
+              ></highcharts-chart>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <small class="stats-label">  Pages / Visite</small>
+                    <h4>236 321.80</h4>
+                </div>
+
+                <div class="col-4">
+                    <small class="stats-label">%Nouvelles visites</small>
+                    <h4>46.11%</h4>
+                </div>
+                <div class="col-4">
+                    <small class="stats-label">La semaine dernière</small>
+                    <h4>432.021</h4>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-4">
+            <h1 class="m-b-xs">
+                98,100
+            </h1>
+            <small> transaction au cours des dernières 24h            </small>
+            <div class="m-b-sm">
+                <highcharts-chart
+                [Highcharts]="Highcharts2"
+                [options]="chartOptions2"
+                style="width: 100%; height: 200px; display: block;"
+              ></highcharts-chart>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <small class="stats-label">Pages / Visite</small>
+                    <h4>166 781.80</h4>
+                </div>
+
+                <div class="col-4">
+                    <small class="stats-label">%Nouvelles visites</small>
+                    <h4>22.45%</h4>
+                </div>
+                <div class="col-4">
+                    <small class="stats-label">La semaine dernière</small>
+                    <h4>862.044</h4>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-sm-4">
+
+            <div class="row m-t-xs">
+                <div class="col-6">
+                    <h5 class="m-b-xs">Revenu le mois dernier</h5>
+                    <h1 class="no-margins">160,000</h1>
+                    <div class="font-bold text-colaur">98% <i class="fa fa-bolt"></i></div>
+                </div>
+                <div class="col-6">
+                    <h5 class="m-b-xs">Sals année en cours</h5>
+                    <h1 class="no-margins">42,120</h1>
+                    <div class="font-bold text-colaur">98% <i class="fa fa-bolt"></i></div>
+                </div>
+            </div>
+
+
+            <table class="table small m-t-sm">
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>142</strong>
+                        Projets
+
+                    </td>
+                    <td>
+                        <strong>22</strong> Messages
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <strong>61</strong> Commentaires
+                    </td>
+                    <td>
+                        <strong>54</strong>Des articles
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>154</strong>
+                        Entreprises
+                    </td>
+                    <td>
+                        <strong>32</strong> Les clients
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+
+
+        </div>
+
+    </div>
+  <div class="row">
+    <div class="col-12">
+        <highcharts-chart
+      [Highcharts]="Highcharts"
+      [options]="chartOptions"
+      style="width: 100%; height: 400px; display: block;"
+    ></highcharts-chart>
+    </div>
+  </div>
+  <app-payments></app-payments>
+</div>
+
+

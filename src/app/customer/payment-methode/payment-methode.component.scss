@@ -15,8 +15,7 @@
 
 }
 .coleur-success{
-   background-color:   #0e3a03;
-   color: aliceblue;
+   color:   #0e3a03;
    font-size: 20px;
 
  }
@@ -25,9 +24,20 @@
    font-size: 20px;
  }
  .img {
-  height: 50px;
-  width: 150px;
+  width: 80px;
   display: inline-block;
   vertical-align: middle;
-  background-size:200px;
+}
+.img-om{
+  height:10%;
+  width: 60px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.img-vr{
+  height:50%;
+  width: 60px;
+  display: inline-block;
+  vertical-align: middle;
 }

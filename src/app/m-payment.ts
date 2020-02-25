@@ -1,5 +1,4 @@
-export class PaiementPartielDto
-{
+export class PaiementPartielDto {
   id: any;
   amount: any;
   paiementMethodeId: any;

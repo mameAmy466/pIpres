@@ -13,12 +13,15 @@ import { ValideComponent } from './valide/valide.component';
 import { ProfilComponent } from './profil/profil.component';
 import { ValiditeExterneComponent } from './validite-externe/validite-externe.component';
 import { ValideExComponent } from './valide-ex/valide-ex.component';
+import { PaymentsComponent } from './payments/payments.component';
+import { HitoriqueComponent } from './admin/hitorique/hitorique.component';
 
 
 const routes: Routes = [
   {
   path: '' , redirectTo: '/index', pathMatch: 'full'
   },
+
   {
     path: 'index' , component: BodyComponent
   },
@@ -30,6 +33,12 @@ const routes: Routes = [
   },
   {
     path: 'payment', component: PaymentComponent
+  },
+  {
+    path: 'payments', component: PaymentsComponent
+  },
+  {
+    path: 'historique.transactions', component: HitoriqueComponent
   },
   {
     path: 'payment.valide', component: PaymentValidatorComponent

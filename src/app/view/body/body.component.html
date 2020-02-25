@@ -1,16 +1,19 @@
 <app-sousnavbar></app-sousnavbar>
-<div class="container-fluid bg">
+<br>
+<app-hitorique *ngIf="isAdmin()"></app-hitorique>
+<div class="container-fluid bg" *ngIf="isUser()">
   <div class="container-fluid bg1 text-center">
       <div class="row">
-          <div class="col-lg-12 text-white text-center font-bold">
+          <div class="col-lg-12 text-white text-center">
                        <br><br><br><br>
-                      <h1>Bienvenue Contribuable X
+                      <h1 class="font-bold" *ngIf="isUser()">Bienvenue Contribuable X
+                        </h1>
+                        <h1 *ngIf="isAdmin()">Bienvenue User X
                         </h1>
                       <p>
-                         Faytax est votre plateforme de paiement des impôts. Sur Faytax vous pouvez effectuer vos paiements en toute sécurité
+                         <strong> Faytax </strong> est votre plateforme de paiement des impôts. Sur<strong> Faytax </strong>  vous pouvez effectuer vos paiements en toute sécurité
                         <br> via plusieurs moyens de paiement
                       </p>
-
           </div>
       </div>
           <div class="row text-center">
@@ -39,7 +42,7 @@
           </div>
     </div>
 </div>
-<div class="container">
+<div class="container" *ngIf="isUser()">
     <div class="row">
         <div class="col-lg-12">
         <div class="wrapper wrapper-content animated fadeInRight">

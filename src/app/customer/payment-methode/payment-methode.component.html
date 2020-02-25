@@ -1,49 +1,51 @@
 <app-sousnavbar></app-sousnavbar>
 <br><br>
-<div class="row">
-  <div class="col-lg-12">
-      <div class="ibox ">
-          <div class="ibox-title  coleur-btn text-white">
-              <h5>Paiements</h5>
-          </div>
-          <div class="ibox-content">
-                <table class="footable table table-stripped toggle-arrow-tiny">
-                  <tbody *ngFor="let mp of tabData" >
-                      <tr *ngIf="mp.paiementMethodeId && mp.amount">
-                          <td>je souhaite payer</td>
-                          <td> {{mp.amount | number :'0.0':'fr'}} F Cfa</td>
-                          <td> par </td>
-                          <td *ngIf="mp.paiementMethodeId =='Orange Money'"> <img src="https://monisnapcontent.kinsta.cloud/wp-content/uploads/2019/06/orange-money.jpg" class=" img-md" alt="image"></td>
-                          <td *ngIf="mp.paiementMethodeId =='Carte Bancaire'"> <img src="../../../assets/images/test carte bancaire.png" alt="image"></td>
-                          <td *ngIf="mp.paiementMethodeId =='Paypal'">  <img  src="https://cdn.1min30.com/wp-content/uploads/2017/10/Logo-PayPal-1.jpg " class=" img-md" alt="image"></td>
-                          <td *ngIf="mp.paiementMethodeId =='Virement'">  <img src="../../../assets/images/tEST VIREMENT" class=" img-md" alt="image"></td>
-                          <td *ngIf="!mp.valide && mp.paiementMethodeId =='Paypal'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/paypal.html">Procéder au Paiement</button></td>
-                          <td *ngIf="!mp.valide && mp.paiementMethodeId =='Virement'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)" routerLink="/payment.valide">Procéder au Paiement</button></td>
-                          <td *ngIf="!mp.valide && mp.paiementMethodeId =='Carte Bancaire'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/Paiement-carte.html">Procéder au Paiement</button></td>
-                          <td *ngIf="!mp.valide && mp.paiementMethodeId =='Orange Money'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/orage-money.html">Procéder au Paiement</button></td>
-                          <td *ngIf="mp.valide"><button class="btn coleur-success btn-circle btn-lg" type="button"><i class="fa fa-check"></i></button></td>
-                           <td class="coleur-success1"  *ngIf="mp.valide">Payé</td>
-                        </tr>
-                  </tbody>
-                </table>
-           </div>
-           <div class="ibox-content font-weight-bold">
-             <div class="row">
-               <div class="col-6"></div>
-               <div class="col-3 text-right">Total à payer</div>
-               <div class="col-3"> {{total| number :'0.0':'fr'}} F cFA</div>
-             </div>
-             <div class="row">
-                <div class="col-6"></div>
-                <div class="col-3 text-right">Payé</div>
-                <div class="col-3"> {{amount | number :'0.0':'fr'}} F cFA</div>
-              </div>
-              <div class="row">
-                  <div class="col-6"></div>
-                  <div class="col-3 text-right">Reste à payer</div>
-                  <div class="col-3"> {{total2| number :'0.0':'fr'}} F cFA</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title  coleur-btn text-white">
+                    <h5>Paiements</h5>
                 </div>
-           </div>
+                <div class="ibox-content">
+                      <table class="footable table table-stripped toggle-arrow-tiny">
+                        <tbody *ngFor="let mp of tabData" >
+                            <tr *ngIf="mp.paiementMethodeId && mp.amount">
+                                <td class="font-weight-bold" *ngIf="!mp.valide">Je souhaite payer</td>
+                                <td> {{mp.amount | number :'0.0':'fr'}} F CFA</td>
+                                <td><strong>par</strong></td>
+                                <td *ngIf="mp.paiementMethodeId =='Orange Money'"> <img src="https://monisnapcontent.kinsta.cloud/wp-content/uploads/2019/06/orange-money.jpg" class="img-md" alt="image"></td>
+                                <td *ngIf="mp.paiementMethodeId =='Carte Bancaire'"> <img src=" https://www.reussir-mon-ecommerce.fr/wp-content/uploads/2016/03/Logo_CB-1-1024x503.png" alt="image" class="img-md img"></td>
+                                <td *ngIf="mp.paiementMethodeId =='Paypal'"><img  src="https://cdn.1min30.com/wp-content/uploads/2017/10/Logo-PayPal-1.jpg " class="img-md" alt="image"></td>
+                                <td *ngIf="mp.paiementMethodeId =='Virement'"><img src="data:image/png;base64,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" class="img" alt="image"></td>
+                                <td *ngIf="!mp.valide && mp.paiementMethodeId =='Paypal'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/paypal.html">Procéder au paiement</button></td>
+                                <td *ngIf="!mp.valide && mp.paiementMethodeId =='Virement'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)" routerLink="/payment.valide">Procéder au paiement</button></td>
+                                <td *ngIf="!mp.valide && mp.paiementMethodeId =='Carte Bancaire'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/Paiement-carte.html">Procéder au paiement</button></td>
+                                <td *ngIf="!mp.valide && mp.paiementMethodeId =='Orange Money'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/orage-money.html">Procéder au paiement</button></td>
+                                <td *ngIf="mp.valide"><button class="btn coleur-success btn-circle btn-lg" type="button"><i class="fa fa-check"></i></button></td>
+                                 <td class="coleur-success1 text-left"  *ngIf="mp.valide">Payé</td>
+                              </tr>
+                        </tbody>
+                      </table>
+                 </div>
+                 <div class="ibox-content font-weight-bold">
+                   <div class="row">
+                     <div class="col-6"></div>
+                     <div class="col-3 text-right">Total à payer</div>
+                     <div class="col-3"> {{total| number :'0.0':'fr'}} F CFA</div>
+                   </div>
+                   <div class="row">
+                      <div class="col-6"></div>
+                      <div class="col-3 text-right">Payé</div>
+                      <div class="col-3"> {{amount1 | number :'0.0':'fr'}} F CFA</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6"></div>
+                        <div class="col-3 text-right">Reste à payer</div>
+                        <div class="col-3"> {{total2| number :'0.0':'fr'}} F CFA</div>
+                      </div>
+                 </div>
+            </div>
+        </div>
       </div>
-  </div>
 </div>

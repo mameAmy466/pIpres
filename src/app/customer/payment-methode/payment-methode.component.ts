@@ -12,6 +12,7 @@ export class PaymentMethodeComponent implements OnInit {
   public total: any = 0;
   public total2: any = 0;
   public amount: any = 0;
+  public amount1: any = 0;
   public valide = false;
   public methode = '';
   public tabValide = [];
@@ -22,7 +23,8 @@ export class PaymentMethodeComponent implements OnInit {
     this.methode = JSON.parse(localStorage.getItem('methode'));
     this.total = Number(localStorage.getItem('total'));
     this.total2 = Number(localStorage.getItem('total2'));
-    this.amount = Number(localStorage.getItem('amount'));
+    this.amount1 = Number(localStorage.getItem('amount1'));
+
 
 
 
@@ -37,12 +39,14 @@ export class PaymentMethodeComponent implements OnInit {
     }
     this.tabValide.push(element);
   }
-  this.amount = this.amount+mp.amount
+   this.amount1 = this.amount1 + mp.amount;
+   this.amount = mp.amount ;
    const total2 = this.total - this.amount;
    localStorage.setItem('total2', '' + total2);
    localStorage.setItem('TabData', JSON.stringify(this.tabValide));
    localStorage.setItem('methode', JSON.stringify(mp.paiementMethodeId));
    localStorage.setItem('amount', '' + this.amount);
+   localStorage.setItem('amount1', '' + this.amount1);
   }
 
 
