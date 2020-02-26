@@ -125,19 +125,15 @@ export class ApiService {
   private banques = [
     {
       id: 1,
-      name: 'BICIS'
+      name: 'BICIS (SN1547823694)'
+    },
+    {
+      id: 2,
+      name: 'CBAO (SN258946731)'
     },
     {
       id: 3,
-      name: 'CBAO Groupe Attijariwafa bank'
-    },
-    {
-      id: 4,
-      name: 'Société générale de banques au Sénégal'
-    },
-    {
-      id: 5,
-      name: 'Bank of Africa Senegal(BOA)'
+      name: 'BOA (SN589467123)'
     }
   ];
   public scheduledPayment = [];

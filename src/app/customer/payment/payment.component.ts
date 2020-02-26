@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService} from '../../service/api.service';
 import {PaiementPartielDto} from '../../m-payment';
 import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-payment',
@@ -16,7 +18,9 @@ export class PaymentComponent implements OnInit {
   public click = false;
   public paymentMethods = [] as any;
   public TabData = [];
-  constructor(private apiService: ApiService ,private route: Router) {}
+  constructor(private apiService: ApiService ,
+              private route: Router,
+              private _snackBar: MatSnackBar) {}
   ngOnInit() {
     this.TabData.push(this.Mpay);
     this.scheduledPayments = JSON.parse(localStorage.getItem('scheduledPayment'));
@@ -30,14 +34,18 @@ export class PaymentComponent implements OnInit {
     this.click = false;
     localStorage.setItem('total', '' + this.total);
   }
-  forme() {
-    this.click = true;
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 500000,
+    });
   }
  calculTotal(montant) {
    if (montant <= this.total1) {
     this.total1 = this.total1 - montant;
    } else {
-    alert('réduit le montant');
+     const message = 'reduit le montant s\'il vous plaît';
+     const action = 'x';
+     this.openSnackBar(message, action);
    }
   }
   addPayment() {
@@ -53,10 +61,16 @@ export class PaymentComponent implements OnInit {
     localStorage.removeItem('scheduledPayment');
     this.route.navigateByUrl('/taxes');
   }
-  paymentValide() {
-    this.route.navigateByUrl('/payment.methode');
-    this.apiService.TabData = this.TabData;
-    console.log(JSON.stringify(this.TabData));
-    localStorage.setItem('TabData', JSON.stringify(this.apiService.TabData));
+  paymentValide(montant) {
+    if (montant === 0) {
+      this.route.navigateByUrl('/payment.methode');
+      this.apiService.TabData = this.TabData;
+      console.log(JSON.stringify(this.TabData));
+      localStorage.setItem('TabData', JSON.stringify(this.apiService.TabData));
+    } else {
+      const message = 'le montant que vous avez sélectionné reste  ' + montant + '  veuillez continuer le paiement s\'il vous plait';
+      const action = 'x';
+      this.openSnackBar(message, action);
+    }
   }
 }
