@@ -20,6 +20,7 @@ export class PaymentComponent implements OnInit {
   public TabData = [];
   constructor(private apiService: ApiService ,
               private route: Router,
+              // tslint:disable-next-line: variable-name
               private _snackBar: MatSnackBar) {}
   ngOnInit() {
     this.TabData.push(this.Mpay);
@@ -40,13 +41,16 @@ export class PaymentComponent implements OnInit {
     });
   }
  calculTotal(montant) {
-   if (montant <= this.total1) {
-    this.total1 = this.total1 - montant;
-   } else {
-     const message = 'reduit le montant s\'il vous plaît';
-     const action = 'x';
-     this.openSnackBar(message, action);
+   if (montant >= 0) {
+    if (montant <= this.total1) {
+      this.total1 = this.total1 - montant;
+     } else {
+       const message = 'reduit le montant s\'il vous plaît';
+       const action = 'x';
+       this.openSnackBar(message, action);
+     }
    }
+
   }
   addPayment() {
     this.Mpay = new PaiementPartielDto();
@@ -62,15 +66,9 @@ export class PaymentComponent implements OnInit {
     this.route.navigateByUrl('/taxes');
   }
   paymentValide(montant) {
-    if (montant === 0) {
-      this.route.navigateByUrl('/payment.methode');
-      this.apiService.TabData = this.TabData;
-      console.log(JSON.stringify(this.TabData));
-      localStorage.setItem('TabData', JSON.stringify(this.apiService.TabData));
-    } else {
-      const message = 'le montant que vous avez sélectionné reste  ' + montant + '  veuillez continuer le paiement s\'il vous plait';
-      const action = 'x';
-      this.openSnackBar(message, action);
-    }
+    this.route.navigateByUrl('/payment.methode');
+    this.apiService.TabData = this.TabData;
+    console.log(JSON.stringify(this.TabData));
+    localStorage.setItem('TabData', JSON.stringify(this.apiService.TabData));
   }
 }

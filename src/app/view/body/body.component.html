@@ -1,8 +1,7 @@
 <app-sousnavbar></app-sousnavbar>
-<br>
 <app-hitorique *ngIf="isAdmin()"></app-hitorique>
 <div class="container-fluid bg" *ngIf="isUser()">
-  <div class="container-fluid bg1 text-center">
+<br><br>
       <div class="row">
           <div class="col-lg-12 text-white text-center">
                        <br><br><br><br>
@@ -14,35 +13,18 @@
                          <strong> Faytax </strong> est votre plateforme de paiement des impôts. Sur<strong> Faytax </strong>  vous pouvez effectuer vos paiements en toute sécurité
                         <br> via plusieurs moyens de paiement
                       </p>
-          </div>
       </div>
-          <div class="row text-center">
-              <div class="col-3">
-                  <div class="payment-card">
-                      <img src="https://monisnapcontent.kinsta.cloud/wp-content/uploads/2019/06/orange-money.jpg" class="rounded-circle img-lg" alt="Cinque Terre">
-                     </div>
-              </div>
-              <div class="col-3">
-                  <div class="payment-card">
-                      <img src="https://cdn.1min30.com/wp-content/uploads/2017/10/Logo-PayPal-1.jpg " class="rounded-circle img-lg "  alt="Cinque Terre">
-
-                    </div>
-              </div>
-              <div class="col-3">
-                  <div class="payment-card">
-                      <img src="../../../assets/images/tEST VIREMENT" class="img-lg img"  alt="Cinque Terre">
-
-                    </div>
-              </div>
-              <div class="col-3">
-                  <div class="payment-card">
-                      <img src="../../../assets/images/carte.jpg" class="rounded-circle  img-lg" alt="Cinque Terre">
-                    </div>
-              </div>
-          </div>
     </div>
 </div>
-<div class="container" *ngIf="isUser()">
+<br><br>
+<div class="container">
+    <div class="row text-center">
+       <div class="col-3"><img src="../../../assets/images/OM.png" alt="" class="img"></div>
+       <div class="col-3"><img src="../../../assets/images/paypal.png" alt="" class="img"></div>
+       <div class="col-3"><img src="../../../assets/images/VISA.png" alt="" class="img"></div>
+       <div class="col-3"><img src="../../../assets/images/virement.png" alt="" class="img"></div>
+    </div>
+    <br><br>
     <div class="row">
         <div class="col-lg-12">
         <div class="wrapper wrapper-content animated fadeInRight">
@@ -52,14 +34,14 @@
                       <div class="row">
                         <div class="col-1"></div>
 
-                            <div class="col-5 border-right font-bold">
-                                <p>
+                            <div class="col-6 border-right">
+                                <h3>
                                    - Mon compte vous permet de gérer votre espace personnel<br>
                                    - Mes paiements vous permet d'effectuer vos paiements groupés ou individuels <br>
                                    - Mon activité vous permet de consulter l'historique des vos paiements et opérations sur Faytax
-                                  </p>
+                                  </h3>
                             </div>
-                            <div class="col-5">
+                            <div class="col-4">
                               <br>
                               <br>
                                 <button class="btn coleur border" routerLink="/taxes">Consulter mes paiements en attente</button>
