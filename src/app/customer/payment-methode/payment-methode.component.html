@@ -22,7 +22,8 @@
                                 <td *ngIf="!mp.valide && mp.paiementMethodeId =='Carte Bancaire'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/Paiement-carte.html">Procéder au paiement</button></td>
                                 <td *ngIf="!mp.valide && mp.paiementMethodeId =='Orange Money'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/orage-money.html">Procéder au paiement</button></td>
                                 <td *ngIf="mp.valide"><button class="btn coleur-success btn-circle btn-lg" type="button"><i class="fa fa-check"></i></button></td>
-                                <td class="coleur-success1"  *ngIf="mp.valide">Payé</td>
+                                <td class="coleur-success1"  *ngIf="mp.valide  && mp.paiementMethodeId !='Virement'">Payé</td>
+                                <td class="text-info"  *ngIf="mp.valide && mp.paiementMethodeId =='Virement'">En attente de validation</td>
                               </tr>
                         </tbody>
                       </table>

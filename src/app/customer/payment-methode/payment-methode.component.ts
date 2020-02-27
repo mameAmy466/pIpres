@@ -40,8 +40,11 @@ export class PaymentMethodeComponent implements OnInit {
     this.tabValide.push(element);
   }
    this.amount1 = this.amount1 + mp.amount;
+   console.log(this.amount1);
    this.amount = mp.amount ;
-   const total2 = this.total - this.amount;
+   console.log(this.amount);
+   const total2 = this.total - this.amount1;
+   console.log(this.total2);
    localStorage.setItem('total2', '' + total2);
    localStorage.setItem('TabData', JSON.stringify(this.tabValide));
    localStorage.setItem('methode', JSON.stringify(mp.paiementMethodeId));

@@ -12,17 +12,16 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-/*private jwt;*/
 user: User;
   constructor( private loginService: LoginService ,
                private router: Router ,
-               private _snackBar: MatSnackBar) { }
+               private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     localStorage.clear();
   }
   openSnackBar(message: string, action: string) {
-    this._snackBar.open(message, action, {
+    this.snackBar.open(message, action, {
       duration: 500000,
     });
   }
