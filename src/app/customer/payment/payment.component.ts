@@ -41,7 +41,7 @@ export class PaymentComponent implements OnInit {
     });
   }
  calculTotal(montant) {
-   if (montant >= 0) {
+   if (montant > 0) {
     if (montant <= this.total1) {
       this.total1 = this.total1 - montant;
      } else {
