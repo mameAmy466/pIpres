@@ -63,6 +63,8 @@ export class PaymentComponent implements OnInit {
   }
   removeTab() {
     localStorage.removeItem('scheduledPayment');
+    localStorage.removeItem('total');
+    this.apiService.scheduledPayment.length = 0;
     this.route.navigateByUrl('/taxes');
   }
   paymentValide(montant) {

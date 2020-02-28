@@ -16,6 +16,7 @@ export class TaxesComponent implements OnInit {
    public montantTotal = 0;
   constructor( private apiServe: ApiService ,
                private route: Router ,
+               // tslint:disable-next-line: variable-name
                private _snackBar: MatSnackBar) { }
 
   ngOnInit() {

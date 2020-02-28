@@ -31,7 +31,7 @@ export class SousnavbarComponent implements OnInit {
       localStorage.removeItem('methode');
       localStorage.removeItem('amount');
       localStorage.removeItem('amount1');
-      localStorage.removeItem('TabData');
+      localStorage.removeItem('total');
       localStorage.removeItem('user');
       this.route.navigateByUrl('/login');
    }
