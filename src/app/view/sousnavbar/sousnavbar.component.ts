@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/user';
 import { Route, Router } from '@angular/router';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-sousnavbar',
@@ -9,7 +10,7 @@ import { Route, Router } from '@angular/router';
 })
 export class SousnavbarComponent implements OnInit {
   user: User;
-  constructor( private route: Router) { }
+  constructor( private route: Router,private apiService: ApiService) { }
 
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('user'));
@@ -33,6 +34,7 @@ export class SousnavbarComponent implements OnInit {
       localStorage.removeItem('amount1');
       localStorage.removeItem('total');
       localStorage.removeItem('user');
+      this.apiService.scheduledPayment.length = 0;
       this.route.navigateByUrl('/login');
    }
 

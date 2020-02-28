@@ -67,7 +67,7 @@ export class PaymentComponent implements OnInit {
     this.apiService.scheduledPayment.length = 0;
     this.route.navigateByUrl('/taxes');
   }
-  paymentValide(montant) {
+  paymentValide() {
     this.route.navigateByUrl('/payment.methode');
     this.apiService.TabData = this.TabData;
     console.log(JSON.stringify(this.TabData));
