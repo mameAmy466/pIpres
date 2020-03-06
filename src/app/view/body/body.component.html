@@ -1,4 +1,5 @@
 <app-sousnavbar></app-sousnavbar>
+<br>
 <app-hitorique *ngIf="isAdmin()"></app-hitorique>
 <div class="container-fluid bg" *ngIf="isUser()">
 <br><br>
@@ -33,13 +34,16 @@
                   <div class="container">
                       <div class="row">
                         <div class="col-1"></div>
+                        <div class="col-2 text-center ">
+                          	<mat-icon class="icon-mat">help</mat-icon>
+                        </div>
 
-                            <div class="col-6 border-right">
-                                <h3>
+                            <div class="col-4 border-right text-justify" style="font-size: 15px;">
+                                <p>
                                    - Gérer votre espace personnel<br>
                                    - Effectuer un paiement <br>
                                    - Consulter l'historique des vos paiements
-                                  </h3>
+                                  </p>
                             </div>
                             <div class="col-4">
                               <br>
