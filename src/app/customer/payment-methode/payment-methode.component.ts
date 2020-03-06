@@ -14,6 +14,7 @@ export class PaymentMethodeComponent implements OnInit {
   public amount: any = 0;
   public amount1: any = 0;
   public valide = false;
+  public tab;
   public methode = '';
   public tabValide = [];
   constructor( private apiS: ApiService) { }
@@ -22,12 +23,7 @@ export class PaymentMethodeComponent implements OnInit {
     this.tabData = JSON.parse(localStorage.getItem('TabData'));
     this.methode = JSON.parse(localStorage.getItem('methode'));
     this.total = Number(localStorage.getItem('total'));
-    const nombre1 = Number(localStorage.getItem('total2'));
-    if (nombre1 === 0) {
-     this.total2 = this.total;
-    } else {
-      this.total2 = nombre1;
-    }
+    this.total2 = Number(localStorage.getItem('total2'));
     this.amount1 = Number(localStorage.getItem('amount1'));
   }
   // tslint:disable-next-line: new-parens
