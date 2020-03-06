@@ -22,7 +22,7 @@ export class HitoriqueComponent implements OnInit {
           type: 'area'
       },
       title: {
-          text: 'Diagramme des transactions de 2019'
+          text: 'Transactions 2019'
       },
       tooltip: {
           split: false,
