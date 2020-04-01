@@ -15,13 +15,20 @@ export class BodyComponent implements OnInit {
 
   ngOnInit() {
     this.imagesUrl = [
-      '../../../assets/imgs/orange-money_0.png',
-      '../../../assets/imgs/virement.png',
-      '../../../assets/imgs/carteVISA.png',
+      // '../../../assets/imgs/orange-money_0.png',
+      // '../../../assets/imgs/virement.png',
+      // '../../../assets/imgs/carteVISA.png',
+      // '../../../assets/imgs/free-money1.png',
+      // '../../../assets/imgs/Paypal.png',
+      // '../../../assets/imgs/Wari_logo.png',
+      // '../../../assets/imgs/logo_yup_fond_blanc.png'
+          '../../../assets/images/OM.png',
+      '../../../assets/images/virement.png',
+      '../../../assets/images/VISA.png',
       '../../../assets/imgs/free-money1.png',
-      '../../../assets/imgs/Paypal.png',
-      '../../../assets/imgs/Wari_logo.png',
-      '../../../assets/imgs/logo_yup_fond_blanc.png'
+      '../../../assets/images/paypal.png',
+      '../../../assets/images/Wari_logo.png',
+      '../../../assets/images/logo_yup_fond_blanc.png'
         ];
     this.user = JSON.parse(localStorage.getItem('user'));
   }
