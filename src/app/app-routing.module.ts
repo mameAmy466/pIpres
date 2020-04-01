@@ -15,6 +15,7 @@ import { ValiditeExterneComponent } from './validite-externe/validite-externe.co
 import { ValideExComponent } from './valide-ex/valide-ex.component';
 import { PaymentsComponent } from './payments/payments.component';
 import { HitoriqueComponent } from './admin/hitorique/hitorique.component';
+import { ValidesComponent } from './admin/valides/valides.component';
 
 
 const routes: Routes = [
@@ -56,7 +57,19 @@ const routes: Routes = [
     path: 'Valide', component: ValideComponent
   },
   {
+    path: 'wari.com', component: ValidesComponent
+  },
+  {
+    path: 'free-money.com', component: ValidesComponent
+  },
+   {
+    path: 'yup.com', component: ValidesComponent
+  },
+  {
     path: 'Orage-Money-valide.html', component: ValideExComponent
+  },
+  {
+    path: 'valide.html', component: ValideExComponent
   },
   {
     path: 'carte-valide.html', component: ValideExComponent

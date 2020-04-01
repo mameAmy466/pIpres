@@ -22,7 +22,6 @@ export class TaxesComponent implements OnInit {
   ngOnInit() {
     this.teste();
     // tslint:disable-next-line: no-unused-expression
-    this.montantTotal;
   }
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
@@ -32,15 +31,18 @@ export class TaxesComponent implements OnInit {
 
  teste() {
    this.taxes =  this.apiServe.getAllTax();
+   for (let i = 0; i < this.taxes.length; i++) {
+    const element = this.taxes[i];
+    this.apiServe.scheduledPayment.push(element);
+    this.montantTotal = this.montantTotal + element.paymentAmount;
+  }
     }
   choose(t: any, montant) {
+    this.apiServe.getScheduledPayment = this.taxes;
     const index: number = this.apiServe.scheduledPayment.indexOf(t);
     if (index !== -1) {
       this.apiServe.scheduledPayment.splice(index, 1);
       this.montantTotal = this.montantTotal - montant;
-    } else {
-      this.apiServe.scheduledPayment.push(t);
-      this.montantTotal = this.montantTotal + montant;
     }
   }
 
@@ -48,10 +50,6 @@ export class TaxesComponent implements OnInit {
     if (this.apiServe.scheduledPayment.length !== 0) {
       this.route.navigateByUrl('/payment');
       localStorage.setItem('scheduledPayment', JSON.stringify(this.apiServe.scheduledPayment));
-    } else {
-      const message = 'veuillez sélectionner au moins un element svp';
-      const action = 'x';
-      this.openSnackBar(message, action);
     }
     }
 }

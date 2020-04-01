@@ -44,6 +44,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTreeModule } from '@angular/material/tree';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { SliderModule } from 'angular-image-slider';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { ValidesComponent } from './admin/valides/valides.component';
+
+
+
 
 
 
@@ -68,6 +74,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     ValideExComponent,
     HitoriqueComponent,
     PaymentsComponent,
+    ValidesComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,7 +93,9 @@ import { HighchartsChartModule } from 'highcharts-angular';
     MatPaginatorModule,
     MatSortModule,
     MatTreeModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    SliderModule,
+    MatCarouselModule.forRoot(),
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'},

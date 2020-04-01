@@ -17,9 +17,16 @@
                                 <td *ngIf="mp.paiementMethodeId =='Carte Bancaire'"> <img src="../../../assets/images/VISA.png" alt="image" class="img img"></td>
                                 <td *ngIf="mp.paiementMethodeId =='Paypal'"><img  src="../../../assets/images/paypal.png" class="img" alt="image"></td>
                                 <td *ngIf="mp.paiementMethodeId =='Virement'"><img  src="../../../assets/images/virement.png" class="img" alt="image"></td>
+                                <td *ngIf="mp.paiementMethodeId =='Wari'"><img  src="../../../assets/imgs/Wari_logo.png" class="img" alt="image"></td>
+                                <td *ngIf="mp.paiementMethodeId =='Free Money'"><img  src="../../../assets/imgs/free-money1.png" class="img" alt="image"></td>
+                                <td *ngIf="mp.paiementMethodeId =='Yup'"><img  src="../../../assets/imgs/logo_yup_fond_blanc.png" class="img" alt="image"></td>
+
                                 <td *ngIf="!mp.valide && mp.paiementMethodeId =='Paypal'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/paypal.html">Procéder au paiement</button></td>
                                 <td *ngIf="!mp.valide && mp.paiementMethodeId =='Virement'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)" routerLink="/payment.valide">Procéder au paiement</button></td>
                                 <td *ngIf="!mp.valide && mp.paiementMethodeId =='Carte Bancaire'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/Paiement-carte.html">Procéder au paiement</button></td>
+                                <td *ngIf="!mp.valide && mp.paiementMethodeId =='Wari'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/wari.com">Procéder au paiement</button></td>
+                                <td *ngIf="!mp.valide && mp.paiementMethodeId =='Yup'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/yup.com">Procéder au paiement</button></td>
+                                <td *ngIf="!mp.valide && mp.paiementMethodeId =='Free Money'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/free-money.com">Procéder au paiement</button></td>
                                 <td *ngIf="!mp.valide && mp.paiementMethodeId =='Orange Money'"><button type="submit" class="btn coleur b-r-xl border" (click)="recupereMethode(mp)"  routerLink="/orage-money.html">Procéder au paiement</button></td>
                                 <td *ngIf="mp.valide"><button class="btn coleur-success btn-circle btn-lg" type="button"><i class="fa fa-check"></i></button></td>
                                 <td class="coleur-success1"  *ngIf="mp.valide  && mp.paiementMethodeId !='Virement'">Payé</td>

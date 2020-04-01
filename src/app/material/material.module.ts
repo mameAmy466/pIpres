@@ -80,6 +80,6 @@ const MaterialComponents=[
 @NgModule({
   declarations: [],
   imports: [MaterialComponents],
-  exports: [MaterialComponents]
+  exports:[MaterialComponents]
 })
 export class MaterialModule { }

@@ -1,7 +1,9 @@
 <app-sousnavbar></app-sousnavbar>
 <br>
 <app-hitorique *ngIf="isAdmin()"></app-hitorique>
+<br>
 <div class="container-fluid bg" *ngIf="isUser()">
+<br><br>
 <br><br>
       <div class="row">
           <div class="col-lg-12 text-white text-center">
@@ -17,15 +19,13 @@
       </div>
     </div>
 </div>
-<br><br>
+<br>
+<div class="card">
+    <angular-image-slider  [autoRotate]="true"
+    [autoRotateAfter]="5000"
+    [autoRotateRight]="true" [images]="imagesUrl"></angular-image-slider>
+</div>
 <div class="container" *ngIf="isUser()">
-    <div class="row text-center">
-       <div class="col-3"><img src="../../../assets/images/OM.png" alt="" class="img"></div>
-       <div class="col-3"><img src="../../../assets/images/paypal.png" alt="" class="img"></div>
-       <div class="col-3"><img src="../../../assets/images/VISA.png" alt="" class="img"></div>
-       <div class="col-3"><img src="../../../assets/images/virement.png" alt="" class="img"></div>
-    </div>
-    <br><br>
     <div class="row">
         <div class="col-lg-12">
         <div class="wrapper wrapper-content animated fadeInRight">
@@ -35,7 +35,7 @@
                       <div class="row">
                         <div class="col-1"></div>
                         <div class="col-2 text-center ">
-                          	<mat-icon class="icon-mat">help</mat-icon>
+                          <img src="../../../assets/imgs/question2.png" alt="" class="img-md">
                         </div>
 
                             <div class="col-4 border-right text-justify" style="font-size: 15px;">

@@ -109,16 +109,29 @@ export class ApiService {
       name: 'Orange Money'
     },
     {
-      id: 3,
+      id: 2,
       name: 'Paypal'
     },
     {
-      id: 4,
+      id: 3,
       name: 'Carte Bancaire'
     },
     {
-      id: 5,
+      id: 4,
       name: 'Virement'
+    }
+    ,
+    {
+      id: 5,
+      name: 'Wari'
+    },
+    {
+      id: 6,
+      name: 'Free Money'
+    },
+    {
+      id: 7,
+      name: 'Yup'
     }
   ];
 

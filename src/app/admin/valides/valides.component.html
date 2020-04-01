@@ -1,0 +1,198 @@
+<div class="container-fluid  text-center" *ngIf="methode == 'Wari'">
+  <div class="h-100 p-sm">
+      <img src="../../../assets/imgs/Wari_logo.png" alt="">
+  </div>
+
+</div>
+<div class=" loginscreen animated" *ngIf="methode == 'Wari'">
+    <div class="ibox-content">
+        <div class="row">
+            <div class="col-sm-12 text-center"><h3 class="m-t-none m-b">Payer avec Wari</h3>
+
+                <p>Remplir les Champs</p>
+
+                <form #f="ngForm" (ngSubmit)="OneClique(f.value)" >
+                    <div class="form-group row">
+                      <div class="col-2"></div>
+                        <div class="form-group col-3 text-left">
+                            <label>
+                              Prénom
+                              </label>
+                          </div>
+                        <div class="form-group col-5">
+                            <input type="taxt" readonly class="form-control">
+                             </div>
+                         </div>
+
+                    <div class="form-group row">
+                        <div class="col-2"></div>
+
+                        <div class="form-group col-3 text-left">
+                            <label>
+                              Nom
+                              </label>
+                          </div>
+                        <div class="form-group col-5">
+                            <input type="taxt" readonly class="form-control">
+                             </div>
+                         </div>
+                         <div class="form-group row">
+                            <div class="col-2"></div>
+
+                            <div class="form-group col-3 text-left">
+                                <label>
+                                  Téléphone
+                                  </label>
+                              </div>
+                            <div class="form-group col-5">
+                                <input type="number" readonly class="form-control">
+                                 </div>
+                             </div>
+                    <div class="form-group row">
+                        <div class="col-2"></div>
+
+                        <div class="form-group col-3 text-left">
+                            <label>
+                              Montant du paiement
+                          </label>
+                          </div>
+                          <div class="form-group col-5">
+                      <input type="taxt" value="{{amount}}" readonly class="form-control">
+                      </div>
+                    </div>
+                    <div class="text-center" >
+                        <button class="btn btn-lg coleur m-t-n-xs" type="submit" routerLink="/valide.html">
+                          <strong>Valider</strong>
+                        </button>
+                    </div>
+                </form>
+            </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="container-fluid  text-center" *ngIf="methode == 'Free Money'">
+    <div class="h-100 p-sm">
+        <img src="../../../assets/imgs/free-money1.png" alt="">
+    </div>
+
+  </div>
+  <div class=" loginscreen animated" *ngIf="methode == 'Free Money'">
+      <div class="ibox-content">
+          <div class="row">
+              <div class="col-sm-12 text-center"><h3 class="m-t-none m-b">Paiement sécurisé avec free Money</h3>
+
+
+                  <form #f="ngForm" (ngSubmit)="OneClique(f.value)" >
+
+                           <div class="form-group row">
+                              <div class="col-2"></div>
+
+                              <div class="form-group col-3 text-left">
+                                  <label>
+                                    Téléphone
+                                    </label>
+                                </div>
+                              <div class="form-group col-5">
+                                  <input type="number" readonly class="form-control">
+                                   </div>
+                               </div>
+
+                      <div class="form-group row">
+                        <div class="col-2"></div>
+
+                        <div class="form-group col-3 text-left">
+                            <label>
+                              Code
+                              </label>
+                          </div>
+                        <div class="form-group col-5">
+                            <input type="taxt" readonly class="form-control">
+                             </div>
+                         </div>
+                      <div class="form-group row">
+                          <div class="col-2"></div>
+
+                          <div class="form-group col-3 text-left">
+                              <label>
+                                Montant du paiement
+                            </label>
+                            </div>
+                            <div class="form-group col-5">
+                        <input type="taxt" value="{{amount}}" readonly class="form-control">
+                        </div>
+                      </div>
+                      <div class="text-center" >
+                          <button class="btn btn-lg coleur1 m-t-n-xs" type="submit" routerLink="/valide.html">
+                            <strong>Valider</strong>
+                          </button>
+                      </div>
+                  </form>
+              </div>
+      </div>
+      </div>
+    </div>
+
+
+
+    <div class="container-fluid  text-center" *ngIf="methode == 'Yup'">
+      <div class="h-100 p-sm">
+          <img src="../../../assets/imgs/logo_yup_fond_blanc.png" alt="" >
+      </div>
+
+    </div>
+    <div class=" loginscreen animated" *ngIf="methode == 'Yup'">
+        <div class="ibox-content">
+            <div class="row">
+                <div class="col-sm-12 text-center"><h3 class="m-t-none m-b">Paiement sécurisé avec YUP</h3>
+
+
+                    <form #f="ngForm" (ngSubmit)="OneClique(f.value)" >
+
+                             <div class="form-group row">
+                                <div class="col-2"></div>
+
+                                <div class="form-group col-3 text-left">
+                                    <label>
+                                      Téléphone
+                                      </label>
+                                  </div>
+                                <div class="form-group col-5">
+                                    <input type="number" readonly class="form-control">
+                                     </div>
+                                 </div>
+
+                        <div class="form-group row">
+                          <div class="col-2"></div>
+
+                          <div class="form-group col-3 text-left">
+                              <label>
+                                Code
+                                </label>
+                            </div>
+                          <div class="form-group col-5">
+                              <input type="taxt" readonly class="form-control">
+                               </div>
+                           </div>
+                        <div class="form-group row">
+                            <div class="col-2"></div>
+
+                            <div class="form-group col-3 text-left">
+                                <label>
+                                  Montant du paiement
+                              </label>
+                              </div>
+                              <div class="form-group col-5">
+                          <input type="taxt" value="{{amount}}" readonly class="form-control">
+                          </div>
+                        </div>
+                        <div class="text-center" >
+                            <button class="btn btn-lg coleur1 m-t-n-xs" type="submit" routerLink="/valide.html">
+                              <strong>Valider</strong>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+        </div>
+        </div>
+      </div>
