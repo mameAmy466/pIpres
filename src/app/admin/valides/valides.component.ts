@@ -14,5 +14,5 @@ export class ValidesComponent implements OnInit {
     this.methode = JSON.parse(localStorage.getItem('methode'));
     this.amount = Number(localStorage.getItem('amount'));
   }
-
+  OneClique(data) {}
 }
