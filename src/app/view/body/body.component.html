@@ -20,7 +20,7 @@
     </div>
 </div>
 <br>
-<div class="card">
+<div class="card" *ngIf="isUser()">
     <angular-image-slider  [autoRotate]="true"
     [autoRotateAfter]="5000"
     [autoRotateRight]="true" [images]="imagesUrl"></angular-image-slider>
