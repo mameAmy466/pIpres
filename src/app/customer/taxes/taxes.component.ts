@@ -43,6 +43,9 @@ export class TaxesComponent implements OnInit {
     if (index !== -1) {
       this.apiServe.scheduledPayment.splice(index, 1);
       this.montantTotal = this.montantTotal - montant;
+    } else {
+      this.apiServe.scheduledPayment.push(t);
+      this.montantTotal = this.montantTotal + montant;
     }
   }
 
