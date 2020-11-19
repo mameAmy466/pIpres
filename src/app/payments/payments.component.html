@@ -2,8 +2,8 @@
      <div class="col-9"></div>
      <div class="col-3"><form class="example-form">
         <mat-form-field class="example-full-width">
-          <mat-label style="color: #d49f3f;">recherche</mat-label>
-          <input matInput style="color: #d49f3f;">
+          <mat-label style="color: red;">recherche</mat-label>
+          <input matInput style="color: red;">
         </mat-form-field>
         <button mat-raised-button class=" btn-cherche text-white"><i class="fa fa-search"></i></button>
       </form>
@@ -14,16 +14,16 @@
     <table mat-table class="full-width-table table table-striped" matSort aria-label="Elements">
       <!-- Id Column -->
       <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Numéro de document</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>N° :</th>
         <td mat-cell *matCellDef="let row">{{row.id}}</td>
       </ng-container>
       <ng-container matColumnDef="documentNumbre">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Numéro de document</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>N° de lot</th>
         <td mat-cell *matCellDef="let row">{{row.documentNumbre}}</td>
       </ng-container>
       <!-- Id Column -->
       <ng-container matColumnDef="libelle">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Libellé</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Régime</th>
         <td mat-cell *matCellDef="let row">{{row.libelle}}</td>
       </ng-container>
       <!-- Id Column -->

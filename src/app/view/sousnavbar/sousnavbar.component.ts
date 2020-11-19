@@ -37,5 +37,4 @@ export class SousnavbarComponent implements OnInit {
       this.apiService.scheduledPayment.length = 0;
       this.route.navigateByUrl('/login');
    }
-
 }

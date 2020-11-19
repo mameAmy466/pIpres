@@ -58,7 +58,7 @@ export class HitoriqueComponent implements OnInit {
       data: [ [0,0],[1,2],[2,7],[3,4],[4,11],[5,4],[6,2],[7,5],[8,11],[9,5],[10,4],[11,1],[12,5],[13,2],[14,5],[15,2],[16,0]
     ]
   },  ],
-      colors: [ '#d49f3f','#bf702b'
+      colors: [ 'rgb(224, 13, 13)', 'black'
      ],
       grid: {
         hoverable: true,
@@ -88,7 +88,7 @@ export class HitoriqueComponent implements OnInit {
               34, 43, 43, 35, 44, 32, 44, 52
             ]
         }],
-        colors: [ '#bf702b']
+        colors: [ 'rgb(224, 13, 13)']
      };
      this.chartOptions2 = {
       chart: {
@@ -103,7 +103,7 @@ export class HitoriqueComponent implements OnInit {
           name: '',
           data: [32, 11, 25, 37, 41, 32, 34, 42]
       }],
-      colors: [ '#bf702b']
+      colors: [ 'rgb(224, 13, 13)']
    };
     }
 

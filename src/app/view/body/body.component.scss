@@ -1,6 +1,6 @@
 .bg {
   /* The image used */
-  background-image: url("../../../assets/images/cover.png");
+  background-image: url("../../../assets/images/BANIERE.png");
 
   /* Full height */
  /* height: 100%;
@@ -10,24 +10,25 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.mySlides {display:none;}
 .bg1{
-  background: #bf702b60;
+  background:  rgb(224, 13, 13);
   width: 100%;
 }
 .coleur {
   color: white;
-  background-color:#d49f3f;
+  background-color: rgb(224, 13, 13);
   font-size: 15px;
   border-radius: 10px;
 
 }
 .icon-mat{
-  color: #bf702bf6;
+  color:  rgb(224, 13, 13);
   font-size: 90px;
 }
 .coleur-icon {
   color: white;
-  background-color:#d49f3f;
+  background-color: rgb(224, 13, 13);
   text-align: center;
   margin: auto
 }

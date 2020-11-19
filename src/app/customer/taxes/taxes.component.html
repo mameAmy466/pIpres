@@ -11,10 +11,11 @@
                 <table class="footable table table-striped toggle-arrow-tiny">
                     <thead>
                     <tr>
-                        <th data-toggle="true">Nature d'impôt</th>
-                        <th>Date d'imposition</th>
-                        <th>Montant du paiement</th>
-                        <th data-hide="all">Numéro du document</th>
+                        <th data-toggle="true">Régime</th>
+                        <th>Période</th>
+                        <th>Montant</th>
+                        <th data-hide="all">N° de lot</th>
+                        <th data-hide="all">Référence</th>
                         <th data-hide="all">Date d'élibigité</th>
                         <th>Sélection</th>
                     </tr>
@@ -25,6 +26,7 @@
                             <td>{{t.periodOfTaxation}}</td>
                             <td >{{t.paymentAmount  | number:'0.0':'fr'}} F CFA</td>
                             <td>{{t.documentNumber}}</td>
+                            <td>{{t.eligibilityDate}}</td>
                             <td>{{t.eligibilityDate}}</td>
                             <td>
                               <div class="form-check">

@@ -1,7 +1,6 @@
 .bg {
   /* The image used */
   background-image: url("https://www.dpogroup.com/africa/wp-content/uploads/2018/06/shutterstock_313339838_1440.jpg");
-
   /* Full height */
  /* height: 100%;
 
@@ -11,20 +10,20 @@
   background-size: cover;
 }
 .bg1{
-  background: #bf702b60;
+  background: linear-gradient(to right, rgba(10, 9, 9, 0), rgb(224, 13, 13));
   width: 100%;
 }
 .coleur {
   color: white;
-  background-color:#d49f3f;
+  background: linear-gradient(to right, rgba(7, 7, 7, 0.623), rgb(224, 13, 13));
   font-size: 15px;
 }
 .coleur-text{
-  color: #bf702b;
+  color: red;
 }
 .coleur-icon {
   color: white;
-  background-color:#d49f3f;
+  background-color:red;
   text-align: center;
   margin: auto
 }
@@ -32,7 +31,7 @@
   font-size: 50px;
 }
 .img-border{
-  border: #bf702b 2px solid;
+  border: red 2px solid;
 }
 .slick_demo_2 .ibox-content {
   margin: 0 10px;
